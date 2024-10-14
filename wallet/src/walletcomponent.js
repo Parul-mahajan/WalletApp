@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Sidebar from './sidebar';
 import './App.css';
 
 const wallets = [
@@ -13,6 +14,7 @@ const WalletComponent = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const [walletName, setWalletName] = useState('');
   const [mnemonic, setMnemonic] = useState('');
+  const [isWalletPageVisible, setWalletPageVisible] = useState(true); // Set to true to show by default
 
   const handleDelete = (walletName) => {
     console.log(`Delete ${walletName}`);
@@ -27,35 +29,35 @@ const WalletComponent = () => {
     setModalOpen(false);
   };
 
+  const handleWalletsClick = () => {
+    setWalletPageVisible(true);
+  };
+
   return (
     <div className="wallet-container">
-      <div className="sidebar">
-        <h3>Wallets</h3>
-        <h3>Last Transactions</h3>
-        <div className="support">
-          <h3>Support</h3>
-        </div>
-      </div>
-      <div className="main-content">
-        <h2>Total Coins - {wallets.length}</h2>
-        <div className="wallet-list">
-          {wallets.map((wallet) => (
-            <div className="wallet-item" key={wallet.name}>
-              <div className="wallet-info">
-                <span className="coin-icon">₿</span>
-                <span>{wallet.name}</span>
+      <Sidebar onWalletsClick={handleWalletsClick} />
+      {isWalletPageVisible && (
+        <div className="main-content">
+          <h2>Total Coins - {wallets.length}</h2>
+          <div className="wallet-list">
+            {wallets.map((wallet) => (
+              <div className="wallet-item" key={wallet.name}>
+                <div className="wallet-info">
+                  <span className="coin-icon">₿</span>
+                  <span>{wallet.name}</span>
+                </div>
+                <span>{wallet.holding}</span>
+                <button className="delete-button" onClick={() => handleDelete(wallet.name)}>
+                  🗑️
+                </button>
               </div>
-              <span>{wallet.holding}</span>
-              <button className="delete-button" onClick={() => handleDelete(wallet.name)}>
-                🗑️
-              </button>
-            </div>
-          ))}
+            ))}
+          </div>
+          <button className="import-wallet-button" onClick={() => setModalOpen(true)}>
+            + Import Wallet
+          </button>
         </div>
-        <button className="import-wallet-button" onClick={() => setModalOpen(true)}>
-          + Import Wallet
-        </button>
-      </div>
+      )}
 
       {isModalOpen && (
         <div className="modal-overlay">

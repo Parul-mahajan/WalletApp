@@ -134,3 +134,111 @@ body {
   cursor: pointer;
   margin-top: 10px;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #444;
+  padding: 10px;
+  text-align: left;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text color */
+}
+
+.app {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #1e1e1e; /* Slightly lighter for sidebar */
+  padding: 20px;
+  height: 100vh; /* Full height */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: #ffcc00; /* Gold color for hover effect */
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.transactions {
+  padding: 20px;
+  background-color: #1e1e1e; /* Maintain consistency with sidebar */
+  border-radius: 8px; /* Rounded corners */
+}
+
+h2 {
+  color: #ffcc00; /* Gold color for headers */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Space above the table */
+}
+
+th, td {
+  border: 1px solid #444; /* Dark border for table cells */
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  background-color: #333; /* Dark background for headers */
+  color: #fff; /* White text for headers */
+}
+
+td {
+  background-color: #222; /* Darker background for data */
+}
+
+td:hover {
+  background-color: #333; /* Highlight on hover */
+}
+
+.status-success {
+  color: #4caf50; /* Green color for success */
+}
+
+.result-received {
+  color: #ffcc00; /* Gold color for received */
+}
+
+/* App.css */
+
+.wallet-container, .transactions-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  /* Add more styles as needed */
+}
+
+.main-content, .transactions-content {
+  flex-grow: 1;
+  padding: 20px;
+  /* Add more styles as needed */
+}
