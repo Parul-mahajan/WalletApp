@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './walletcomponent.css';
 
 const wallets = [
   { name: 'BITCOIN', holding: 'BTC 0.00256' },
@@ -29,32 +29,38 @@ const WalletComponent = () => {
 
   return (
     <div className="wallet-container">
-      <div className="sidebar">
-        <h3>Wallets</h3>
-        <h3>Last Transactions</h3>
-        <div className="support">
-          <h3>Support</h3>
-        </div>
+      <div className="navbar">
+        <span className="refresh-button"></span>
+        <span className="navbar-text">Synced</span>
       </div>
-      <div className="main-content">
-        <h2>Total Coins - {wallets.length}</h2>
-        <div className="wallet-list">
-          {wallets.map((wallet) => (
-            <div className="wallet-item" key={wallet.name}>
-              <div className="wallet-info">
-                <span className="coin-icon">₿</span>
-                <span>{wallet.name}</span>
-              </div>
-              <span>{wallet.holding}</span>
-              <button className="delete-button" onClick={() => handleDelete(wallet.name)}>
-                🗑️
-              </button>
-            </div>
-          ))}
+      <div className="content">
+        <div className="sidebar">
+          <h3>Wallets</h3>
+          <h3>Last Transactions</h3>
+          <div className="support">
+            <h3>Support</h3>
+          </div>
         </div>
-        <button className="import-wallet-button" onClick={() => setModalOpen(true)}>
-          + Import Wallet
-        </button>
+        <div className="main-content">
+          <h2>Total Coins - {wallets.length}</h2>
+          <div className="wallet-list">
+            {wallets.map((wallet) => (
+              <div className="wallet-item" key={wallet.name}>
+                <div className="wallet-info">
+                  <span className="bitcoin-icon"></span>
+                  <span>{wallet.name}</span>
+                </div>
+                <span>{wallet.holding}</span>
+                <button className="delete-button" onClick={() => handleDelete(wallet.name)}>
+                  🗑️
+                </button>
+              </div>
+            ))}
+          </div>
+          <button className="import-wallet-button" onClick={() => setModalOpen(true)}>
+            + Import Wallet
+          </button>
+        </div>
       </div>
 
       {isModalOpen && (
