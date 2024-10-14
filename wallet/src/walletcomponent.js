@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './sidebar';
 import './App.css';
-import './walletcomponent.css';
+// import './walletcomponent.css';
 
 const wallets = [
   { name: 'BITCOIN', holding: 'BTC 0.00256' },
