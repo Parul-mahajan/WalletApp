@@ -8,15 +8,13 @@ body {
 .wallet-container {
   display: flex;
   height: 100vh;
+  position: relative; /* Add relative positioning to the container */
 }
 
 .sidebar {
   width: 200px;
   padding: 20px;
   background-color: #2c2c2c;
-  display: flex;
-  flex-direction: column;
-  position: relative;
 }
 
 .main-content {
@@ -37,11 +35,6 @@ body {
   background-color: #3a3a3a;
   margin-bottom: 10px;
   border-radius: 5px;
-  cursor: pointer;
-}
-
-.wallet-item.selected {
-  background-color: #4a4a4a;
 }
 
 /* Delete button styles */
@@ -53,19 +46,15 @@ body {
 }
 
 /* Import Wallet button styles */
-.import-wallet-container {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
 .import-wallet-button {
   background-color: #ff9900;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 20px;
+  position: absolute; /* Position the button absolutely */
+  top: 20px; /* Adjust the top position */
+  right: 20px; /* Adjust the right position */
 }
 
 /* Modal styles */

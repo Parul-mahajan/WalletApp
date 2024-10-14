@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './sidebar';
 import './App.css';
+import './walletcomponent.css';
 
 const wallets = [
   { name: 'BITCOIN', holding: 'BTC 0.00256' },
@@ -37,13 +38,14 @@ const WalletComponent = () => {
     <div className="wallet-container">
       <Sidebar onWalletsClick={handleWalletsClick} />
       {isWalletPageVisible && (
+        
         <div className="main-content">
           <h2>Total Coins - {wallets.length}</h2>
           <div className="wallet-list">
             {wallets.map((wallet) => (
               <div className="wallet-item" key={wallet.name}>
                 <div className="wallet-info">
-                  <span className="coin-icon">₿</span>
+                  <span className="bitcoin-icon"></span>
                   <span>{wallet.name}</span>
                 </div>
                 <span>{wallet.holding}</span>
