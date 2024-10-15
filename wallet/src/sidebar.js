@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
+import './sidebar.css';
 
 const Sidebar = ({ onWalletsClick }) => {
   const navigate = useNavigate();
