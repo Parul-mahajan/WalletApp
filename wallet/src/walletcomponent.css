@@ -39,7 +39,7 @@ body {
     display: flex;
     flex-grow: 1;
 }
-
+/* 
 .sidebar {
     width: 200px;
     margin-top: 40px;
@@ -57,7 +57,7 @@ body {
     border-radius: 10px;
     text-align: center;
     justify-content: center;
-}
+} */
 .main-content {
     flex-grow: 1;
     padding: 20px;
@@ -99,7 +99,7 @@ body {
 }
 
 /* Modal styles */
-.modal-overlay {
+/* .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -107,26 +107,26 @@ body {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-}
+} */
 
-.modal {
+/* .modal {
     background-color: #2c2c2c;
     border-radius: 8px;
-    padding: 20px;
-    width: 400px;
+    padding: 4%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
+} */
 
-.modal h2 {
+/* .modal h2 {
     margin-top: 0;
     margin-bottom: 20px;
-}
+} */
 
 /* Form styles */
-.form-group {
+/* .form-group {
     margin-bottom: 15px;
 }
 
@@ -143,10 +143,10 @@ body {
 .input-field:focus {
     outline: none;
     background-color: #454545;
-}
+} */
 
 /* Submit button styles */
-.submit-button {
+/* .submit-button {
     background-color: #ff9900;
     border: none;
     padding: 10px;
@@ -154,16 +154,16 @@ body {
     cursor: pointer;
     border-radius: 5px;
     width: 100%;
-}
+} */
 
 /* Close button styles */
-.close-modal {
+/* .close-modal {
     background: none;
     border: none;
     color: #ff9900;
     cursor: pointer;
     margin-top: 10px;
-}
+} */
 
 .bitcoin-icon {
     width: 20px;
@@ -174,3 +174,56 @@ body {
     display: inline-block;
     margin-right: 10px;
 }
+
+.modal {
+    background-color: #333;
+    color: #ffd700;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    width: 400px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: #ffd700; /* Adjusted to match text color */
+    border: none;
+    cursor: pointer;
+  }
+  
+  .modal input, .modal textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #fff !important; /* Adjusted to match text color */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    text-align: left; /* Align text to the left */
+  }
+  
+  .modal input::placeholder, .modal textarea::placeholder {
+    color: #ccc; /* Light gray for placeholder text */
+  }
+  
+  .modal button {
+    background-color: #d79d43;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .modal button:hover {
+    background-color: #b47d35;
+  }
