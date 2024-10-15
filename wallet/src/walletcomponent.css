@@ -19,6 +19,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: static;
 }
 .refresh-button {
     width: 20px;

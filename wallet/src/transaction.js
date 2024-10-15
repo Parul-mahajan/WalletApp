@@ -1,6 +1,8 @@
 import React from 'react';
 import Sidebar from './sidebar';
 import './App.css'; // Assuming you have some common styles
+import './walletcomponent.css'; // Assuming you have some wallet component specific styles
+import Navbar from './navbar';
 
 const Transactions = () => {
   const transactions = [
@@ -9,7 +11,13 @@ const Transactions = () => {
   ];
 
   return (
+    // add nav bar and make sure that since transactions container has flex the navbar should be outside the transactions container
+    // add a class to the transactions container to style it  
+
+    <div className="wallet-container">
+      <Navbar />
     <div className="transactions-container">
+      
       <Sidebar />
       <div className="transactions-content">
         <h2>Transactions</h2>
@@ -37,6 +45,7 @@ const Transactions = () => {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
   );
 };
